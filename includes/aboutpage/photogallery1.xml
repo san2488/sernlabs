@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "aboutpage.dtd">
+<page url="PhotoGallery1.php">
+    <title>Photo Gallery</title>
+    <description>
+        I am a hobbyist Photographer and it would have been blasphemous not to 
+        show off of my pics on my own site.
+    </description>
+    <keywords>
+        <keyword>Photos</keyword>
+        <keyword>Photography</keyword>
+        <keyword>XML</keyword>
+        <keyword>PHP XML</keyword>
+        <keyword>Simple XML</keyword>
+        <keyword>Carousal</keyword>
+        <keyword>jQuery</keyword>
+        <keyword>Popup</keyword>
+    </keywords>
+    <section>
+        <title>The Code</title>
+        <content>
+            <![CDATA[
+            <p>I am pretty much in love with XML and this was good place to use
+            it. The image, apart from the source url was supposed to also contain
+            some meta-data like the caption, orientation, etc. The XML structure
+            used is:</p>
+        <pre><code>&lt;photo orientation=&quot;1&quot; id=&quot;p2&quot;&gt;
+    &lt;src&gt;images/Photos/Spiti00017.jpg&lt;/src&gt;
+    &lt;caption&gt;Some Caption&lt;/caption&gt;
+&lt;/photo&gt;</code></pre>
+        <p>PHP has some really awesome inbuilt functions to read XML. These were
+        really easy to use. No wonder its called SimpleXML. For more information
+        check out the <a href="http://php.net/manual/en/book.simplexml.php" target="_blank">Manual
+        for SimpleXML</a>.</p>
+        <p>To read an element, all you need is:</p>
+        <pre><code>$src = $photo-&gt;src</code></pre>
+        <p>To read an attribute, all you need is:</p>
+        <pre><code>$orientation = $photo-&gt;attributes()-&gt;orientation</code></pre>
+        <p>The final code was:</p>
+        <pre><code>&lt;?php
+    $photosFile = simplexml_load_file(&quot;../includedFiles/Info.xml&quot;);
+    $photos = $photosFile-&gt;photo;
+    foreach($photos as $photo)
+    {
+        $src = $photo-&gt;src;
+        $alt = $photo-&gt;alt;
+        $orientation = $photo-&gt;attributes()-&gt;orientation;
+        $caption = htmlspecialchars($photo-&gt;caption, ENT_QUOTES);
+
+        echo &quot;&lt;div class=&#39;photo&#39; 
+            style=&#39;background-image: url(\&quot;$src\&quot;); 
+            data-orientation=&#39;$orientation&#39; 
+            data-caption=&#39;$caption&#39;&gt;&quot; . &quot;&lt;/div&gt;&quot;;
+    }
+?&gt;</code></pre>
+        <p>I am using the data-orientation and data-caption attributes to store
+        meta-data. This is a new feature of the HTML5 spec and its really 
+        useful!</p>
+        <p>Data attributes can be read using jQuery simply as:</p>
+        <pre><code>$self.data(&quot;orientation&quot;)</code></pre>
+            
+            ]]>
+        </content>
+    </section>
+    <section>
+        <title>The Design</title>
+        <content>
+            <![CDATA[
+            
+            <p>The design for this page had to be pleasing but mundane. Otherwise, no
+            one is going to be interested in the photos! I initially had a 
+            different design in mind which included a background filled with an 
+            image of my dear Canon SX20. But that started becaming too tacky, even for
+            my own distinguished taste.</p>
+            <p>So I went to one of the back-up designs I had in mind. The 
+            center piece of the new design was supposed to be the thumbnail view.
+            That turned out to be pretty easy to achieve using some good-old
+            jQuery:</p>
+<pre><code>$(".photo").hover(function(){
+   var $self = $(this);
+   var photoWidth = $self.data("orientation") == 1?400:225;
+
+   $self.stop().animate({width:photoWidth}, 300);
+   $self.siblings('.photo.active').stop().animate({width:40}, 500).removeClass('active');
+   $self.addClass('active');
+})</code></pre>
+            <p>I also wanted a full-size view on clicking a thumbnail image. I 
+            had to reach out to <a href="http://jqueryui.com/demos/dialog/" 
+            target="_blank">jQuery UI Dialog Box</a> for that:</p>
+<pre><code>var $photoDialog = $("#photo-dialog").dialog({
+    dialogClass: 'photoDialog',
+    modal: true,
+    width: 840,
+    height: 620
+});</code></pre>
+            <p>There are other minor effects on this page that I won't be 
+            explaining here. You could just go through the Page Source for that.
+            All in all, what I liked best about this page was that it looked so good 
+            without having me to spend too much time on it.</p>
+            
+            ]]>
+        </content>
+    </section>
+    <section>
+        <title>External Links</title>
+        <content>
+            <![CDATA[
+            <p id="externalLinks">
+                
+            </p>
+            ]]>
+        </content>
+    </section>
+</page>

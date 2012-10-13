@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pages>
+    <page>
+        <AboutXml>
+            homepage1.xml
+        </AboutXml>
+    </page>
+    <page>
+        <AboutXml>
+            aboutme1.xml
+        </AboutXml>
+    </page>
+    <page>
+        <AboutXml>
+            aboutsite1.xml
+        </AboutXml>
+    </page>
+    <page>
+        <AboutXml>
+            photogallery1.xml
+        </AboutXml>
+    </page>
+    <page>
+        <AboutXml>
+            links2.xml
+        </AboutXml>
+    </page>
+</pages>

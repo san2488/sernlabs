@@ -1,0 +1,164 @@
+@charset "utf-8";
+/* CSS Document */
+body {
+	font: 100% Verdana, Arial, Helvetica, sans-serif;
+	margin: 0; /* it's good practice to zero the margin and padding of the body element to account for differing browser defaults */
+	padding: 0;
+	text-align: center; /* this centers the container in IE 5* browsers. The text is then set to the left aligned default in the #container selector */
+	color: #000000;
+	width:1000px;
+        overflow: hidden;
+	background:url(../images/bg-global.jpg) repeat-x #911d00;
+	background:url(../images/bg-redspotlite.jpg) 160px 0px no-repeat #911d00;
+}
+a:link {
+	text-decoration:none;
+	font-family:inherit;
+	color:#bd2500;
+}
+a:hover {
+	text-decoration:underline;
+}
+a:visited {
+	color:#881b01;
+}
+#container {
+	margin:0 auto; /* the auto margins (in conjunction with a width) center the page */
+	text-align:left; /* this overrides the text-align: center on the body element. */
+}
+#copyright {
+	position:absolute;
+	color:#aeaa92;
+	right:10%;
+	bottom:1%;
+	font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
+        font-size: 12px;
+}
+#navPole {
+	position:absolute;
+	height:630px;
+        top: 15%;
+	left:12%;
+	width:320px;
+	overflow:hidden;
+}
+#navPoleImage {
+	bottom:0px;
+	position:absolute;
+	left:40%;
+	overflow:hidden;
+}
+#navPoleImage img {
+    height: 630px;
+    width: 41px;
+}
+.plankStack {
+    position:absolute;
+    top:15px;    
+}
+.plankImage {
+    position: static;
+    width:320px;
+    height:75px;
+    display:block;
+}
+.plankImage:Hover {
+	background-position:0 -75px;
+}
+#mastHead {
+	position:absolute;
+	left: 52.5%;
+	top:20%;
+}
+#mastHead a img{
+    border: 0px;
+}
+
+#mastHead img{
+    width:482px;
+    height:148px;
+}
+#siteIntro {
+	position:absolute;
+	left: 42.5%;
+	top:45%;
+	width:610px;
+	background:url(../images/bg-mellowyellow.jpg) no-repeat 0 0;
+}
+#topNav {
+	position:absolute;
+	top:10%;
+	font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
+	width:100%;
+	background:url(../images/topNav_02.png) repeat-x;
+	height:42px;
+}
+#topNav ul{
+    list-style: none;
+    position:absolute;
+    left:71%;
+    line-height: 20px;
+}
+#topNav li {
+        display:inline; 
+}
+a.topNavLink {	
+    font-size:20px;
+    padding: 14px 10px;
+    color:#f8ecbd;
+    text-decoration:none;
+    font-family:inherit;
+}
+a.topNavLink:hover{
+    background:url(../images/topNav_02.png) repeat-x;
+    text-decoration:none;
+}
+
+.introColumn {
+    width: 45%;
+    float: left;
+    padding:2%;
+}
+.aboutTitle {
+	font: "Lucida Console", "Lucida Sans Typewriter", Monaco, "Bitstream Vera Sans Mono", monospace;
+	color:#b32300;
+	font-size:18px;
+	font-weight:bold;
+}
+
+.aboutDesc {
+	font: "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
+	font-size:16px;
+	text-align:justify;
+	color:#54433e;
+        padding-top:4px;
+}
+.clearboth {
+    clear:both; 
+}
+.aboutImg {
+    float: left;
+    padding-right: 3px;
+}
+#footer {
+	background:url(../images/bgCarbonFooter.jpg) repeat;
+	height:134px;
+	color:#ebd87c;
+	position:absolute;
+	width:100%;
+	top:80%;
+}
+#footerContent {
+	position:absolute;
+	top:50%;
+	height:20px;
+	margin-top:-20px;
+	font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
+	margin-left:12%;
+	margin-right:12%;
+	width:100%;
+}
+.contactInfo{
+    display:inline-block;
+    width: 24%;
+}

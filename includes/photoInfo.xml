@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<photos>
+    <photo orientation="1" id="p1">
+        <src>images/Photos/DSC00455.jpg</src>
+        <caption>A foggy trek to Rajmachi</caption>
+    </photo>
+    <photo orientation="1" id="p2">
+        <src>images/Photos/DSC01674.jpg</src>
+        <caption>Pro Band Performances at SAKEC</caption>
+    </photo>
+    <photo orientation="1" id="p3">
+        <src>images/Photos/IMG_0122.jpg</src>
+        <caption>Some Caption</caption>
+    </photo>
+    <photo orientation="2" id="p4">
+        <src>images/Photos/IMG_0240.jpg</src>
+        <caption>Diwali @ GNR</caption>
+    </photo>
+    <photo orientation="1" id="p6">
+        <src>images/Photos/IMG_0316.jpg</src>
+        <caption>Death Metal</caption>
+    </photo>
+    <photo orientation="1" id="p7">
+        <src>images/Photos/IMG_1565.jpg</src>
+        <caption>Definitely Sunset</caption>
+    </photo>
+    <photo orientation="1" id="p8">
+        <src>images/Photos/IMG_1582.jpg</src>
+        <caption>Freedom</caption>
+    </photo>
+    <photo orientation="2" id="p10">
+        <src>images/Photos/IMG_2293.jpg</src>
+        <caption>Faith through Glass</caption>
+    </photo>
+    <photo orientation="1" id="p9">
+        <src>images/Photos/IMG_2189.jpg</src>
+        <caption>The Viel</caption>
+    </photo>
+    <photo orientation="2" id="p12">
+        <src>images/Photos/IMG_2769.jpg</src>
+        <caption>Dream to Fly</caption>
+    </photo>
+    <photo orientation="1" id="p13">
+        <src>images/Photos/IMG_2774.jpg</src>
+        <caption>Angels to the Rescue</caption>
+    </photo>
+    <photo orientation="2" id="p11">
+        <src>images/Photos/IMG_2663.jpg</src>
+        <caption>Laughing for a Cause</caption>
+    </photo>
+    <photo orientation="1" id="p14">
+        <src>images/Photos/Spiti00057.jpg</src>
+        <caption>The Path</caption>
+    </photo>
+    <photo orientation="2" id="p15">
+        <src>images/Photos/Spiti00108.jpg</src>
+        <caption>Steel against Nature</caption>
+    </photo>
+    <photo orientation="1" id="p16">
+        <src>images/Photos/Spiti00112.jpg</src>
+        <caption>Technicolor by Nature</caption>
+    </photo>
+    <photo orientation="1" id="p17">
+        <src>images/Photos/Spiti00135.jpg</src>
+        <caption>Minas Tirith</caption>
+    </photo>
+</photos>

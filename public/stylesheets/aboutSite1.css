@@ -1,0 +1,100 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	font: 100% Verdana, Arial, Helvetica, sans-serif;
+	background: url(../images/AboutSiteHdr_02.png) repeat-x #FFFFFF;
+	margin: 0; /* it's good practice to zero the margin and padding of the body element to account for differing browser defaults */
+	padding: 0;
+	text-align: center; /* this centers the container in IE 5* browsers. The text is then set to the left aligned default in the #container selector */
+}
+
+@font-face {
+    font-family: 'TravelingTypewriter';
+    src: url('../fonts/TravelingTypewriter.eot');
+    src: url('../fonts/TravelingTypewriter.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/TravelingTypewriter.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'honey';
+    src: url('../fonts/honey.eot');
+    src: url('../fonts/honey.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/honey.ttf') format('truetype');
+}
+#container {
+	width:1000px;  /* this will create a container 1000px of the browser width */
+	background: #FFFFFF;
+	margin: 0 auto; /* the auto margins (in conjunction with a width) center the page */
+	border: none;
+	text-align: left; /* this overrides the text-align: center on the body element. */
+}
+#header {
+	background: #DDDDDD; 
+	height:178px;
+	overflow:hidden;
+	border:none;
+	background:url(../images/AboutSiteHdr.jpg);
+	width:100%;
+}
+#mainContent {
+	padding: 0 20px; /* remember that padding is the space inside the div box and margin is the space outside the div box */
+	background: #FFFFFF;
+	font-family:"TravelingTypewriter", "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
+	float:left;
+	width:70%;
+}
+#sideBar {
+	float:right;
+	width:25%;
+	font-family:"honey", 'Comic Sans', 'Comic Sans MS', 'Marker Felt', 'Apple Chancery', 'Purisa', 'URW Chancery L', cursive;;
+	font-size:25px;
+	line-height:25px;
+	padding:0;
+}
+#footer { 
+	background:#000000;
+	width:100%;
+	clear:both;
+} 
+#footer p {
+	margin: 0; /* zeroing the margins of the first element in the footer will avoid the possibility of margin collapse - a space between divs */
+	padding: 10px 0; /* padding on this element will create space, just as the the margin would have, without the margin collapse issue */
+	color:#FFF;
+	font-size:10px;
+}
+#logo a {
+	position:absolute;
+	top:47px;
+	height:84px;
+	width:1000px;
+}
+#topNav {
+	position:relative;
+	float:right;
+	color:#FFF;
+}
+#topNav ul {
+    float: right;
+    list-style: none outside none;
+    margin: 12px 0 0 0;
+    padding: 0;
+}
+#topNav ul li {
+    float: left;
+    margin: 0 0 0 22px;
+    padding: 0;
+}
+#topNav ul li a {
+    color: #ece0a0;
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
+}
+#topNav ul li a:hover {
+    border-bottom: 2px solid #911d00;
+}
+.highlightText {
+	font-size:18px;
+	color:#911d00;
+	font-weight:bold;
+}

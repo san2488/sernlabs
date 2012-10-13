@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>About Page</title>
+<link href="stylesheets/aboutPage1.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+  <div id="mainContent">
+    <div id="actualContent">
+    <h1>About About Site Page</h1>
+      <p>The purpose of the About Site page is to give you an overall idea about SERNLabs, 
+          or may be not. Okay, I know you have had enough of that! 
+          But the feature I tried out on this page is the CSS @font-face tag.</p>
+      <h3>The Code</h3>
+      <p>The @font-face tag allows you to embed your own fonts into the webpage. 
+          Fonts on the web have always been a tricky affair. You might use the most 
+          attractive of fonts while designing the page, but if the same font is not
+          available on the user's machine, then the browser will replace it with a font it deems fit. 
+          Not a very good prospect for a carefully designed page. The @font-face tag can fix that.</p>
+      <p>The @font-face tag syntax I have used is pretty simple:</p>
+      <pre><code>@font-face {
+    font-family: 'TravelingTypewriter';
+    src: url('../fonts/TravelingTypewriter.eot');
+    src: url('../fonts/TravelingTypewriter.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/TravelingTypewriter.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'honey';
+    src: url('../fonts/honey.eot');
+    src: url('../fonts/honey.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/honey.ttf') format('truetype');
+}</code></pre>
+      The core syntax is even simpler actually:
+      <pre><code>@font-face {
+	font-family: 'TravelingTypewriter';
+	src: url('TravelingTypewriter.otf');
+}</code></pre>
+      <p>But there are issues with Cross-browser compatiability that need the additional lines of code. 
+          Those issues are documented here, 
+          <a href="http://webfonts.info/wiki/index.php?title=@font-face_browser_support">Webfonts.info - @font-face Browser Support</a>.</p>
+      <p></p>
+      <p>Fear not though, dealing with cross-browser compatiable @font-face tags 
+          is made very easy by this wonderful tool, <a href="http://www.fontsquirrel.com/fontface/generator">Font Squirrel - @font-face generator</a>. Another resource I found particulary helpful is <a href="http://randsco.com/index.php/2009/07/04/p680">Randsco.com - How @font-face Works: Easy Peasy</a>. As always, googling @font-face remains your best bet.</p>
+            <h3>The Design</h3>
+      <p>About the Design aspect of the page, I wanted a clean design to offset 
+          the craziness of the text that it was supposed to contain. The colour 
+          theme is similar to the Homepage so as not to immediately shock users.
+          The sidebar font was supposed to reflect my actual handwriting, but I 
+          just could not find anything bad enough!</p>
+</div>
+  </div>
+</div>
+<div id="pgHeader"><img src="images/AboutPage_Hdr_02.jpg" width="864" height="69" alt="About Page" />
+  <div id="topNav">
+    <ul>
+      <li class="topNavLink"><a href="HomePage1.php">Home</a></li>
+      <li class="topNavLink"><a href="AboutSite1.php">Back</a></li>
+      <li class="topNavLink"><a href="#">About Page</a></li>
+    </ul>
+  </div>
+</div>
+</body>
+</html>

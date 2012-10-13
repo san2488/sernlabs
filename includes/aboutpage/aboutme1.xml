@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "aboutpage.dtd">
+<page url="AboutMe1.php">
+    <title>About Me</title>
+    <description>
+        This page is all about I, me and myself.
+    </description>
+    <keywords>
+        <keyword>jQuery</keyword>
+        <keyword>iPhone</keyword>
+        <keyword>sujay narsale</keyword>
+        <keyword>iOS</keyword>
+        <keyword>Accordian</keyword>
+        <keyword>CSS Rollover</keyword>
+        <keyword>Easter Eggs</keyword>
+    </keywords>
+    <section>
+        <title>The Code</title>
+        <content>
+            <![CDATA[
+            <p>There is no PHP gimmickry on this page. Its all about jQuery 
+            Glory. I didn't know much jQuery at all when I started off with this
+            page. But by the end of it, I had become quite the expert! This page
+            took the most time to create - by far!</p>
+            <p>The center piece of the show - the iPod - was the hardest to 
+            make. It took a lot of small effects to make it seem just a little
+            like the iOS interface. The basic structure for the iPod is a 
+            <a href="http://docs.jquery.com/UI/Accordion">jQuery Accordian</a>
+            look-alike, with a &ltspan&gt for the content 
+            and a &lth3&gt for the triggering button:</p>
+<pre><code>&lt;span style=&quot;background-color:#C0F&quot; class=&quot;ipodSlideWindow&quot;&gt;
+&lt;div&gt;
+&lt;div class=&quot;ipodHeader ipodHdrBlue&quot;&gt;Misc&lt;/div&gt;
+&lt;div style=&quot;padding:5px;&quot;&gt;
+  &lt;table class=&quot;ipodIntro&quot;&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;img src=&quot;images/AboutMe1/127410-simple-black-square-.png&quot; 
+        class=&quot;ipodBoxImage&quot; alt=&quot;expert&quot; /&gt;&lt;/td&gt;
+      &lt;td&gt;In a few words&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+  &lt;table class=&quot;ipodForm&quot; cellspacing=&quot;0&quot;&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;width:0%;&quot;&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-transform:none; text-align:justify;&quot;&gt;I am 
+      currently working at TCS under a project for Genworth Wealth
+      Management. This developer profile involves work in the latest 
+      MS technologies. Very exciting stuff!&lt;br /&gt;
+        &lt;br /&gt;
+        SernLabs is just for TP so that I can stay in touch with 
+        CSS, JS and Photoshop. It also provides good motivation to 
+        try out new things.&lt;br /&gt;
+        &lt;br /&gt;
+        I read somewhere that its good to have your mug pasted on 
+        your site....so here goes.&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+  &lt;table class=&quot;ipodForm&quot; cellspacing=&quot;0&quot;&gt;
+    &lt;tr class=&quot;ipodLink&quot; id=&quot;mugShot&quot;&gt;
+      &lt;td class=&quot;ipodLabel&quot;&gt;&lt;img 
+          src=&quot;images/AboutMe1/more_realistic_icons.jpg&quot; width=&quot;20&quot; 
+          height=&quot;20&quot; alt=&quot;photo&quot; /&gt;&lt;/td&gt;
+      &lt;td&gt;My Mugshot&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr class=&quot;ipodLink&quot;&gt;
+      &lt;td class=&quot;ipodLabel&quot;&gt;&lt;img 
+        src=&quot;images/AboutMe1/iossettings.png&quot; width=&quot;20&quot;
+        height=&quot;20&quot; alt=&quot;settings&quot; /&gt;&lt;/td&gt;
+      &lt;td&gt;About Page&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/span&gt;
+&lt;h3 class=&quot;ipodNavButton&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;span&gt;Misc&lt;/span&gt;&lt;img 
+src=&quot;images/AboutMe1/ipodTabIcon_misc.png&quot; width=&quot;83&quot;
+height=&quot;115&quot; /&gt;&lt;/a&gt;&lt;/h3&gt;</code></pre>
+<p>On the day I finished most of the functionality for this page, I found the
+<a href="http://iphone.hohli.com/">jQuery iPhone UI</a>. This does almost 
+everything that I was aiming for and feels truely awesome! Only if I had met you
+earlier! But anyway, I did it my own way. Some basic jQuery took care of the 
+sliding effect.</p>
+<pre><code>$(&quot;.ipodPane h3&quot;).click(function() 
+{			
+    $(this).addClass(&quot;viewing&quot;);
+    $(&quot;.ipodPane h3&quot;).not($(this)).removeClass(&quot;viewing&quot;);
+    refreshViewPane($(this).siblings().css(&#39;left&#39;) == 0 + &quot;px&quot; ? 0 : paneWidth);
+});
+
+function refreshViewPane(initLeft){
+    $(&quot;.ipodPane h3.viewing&quot;).siblings().css(&#39;left&#39;, initLeft + &quot;px&quot;);
+    $(&quot;.ipodPane h3.viewing&quot;).siblings().animate({
+        left: &quot;0px&quot;
+    },&#39;fast&#39;,&#39;swing&#39;);
+    $(&quot;.ipodPane span.ipodSlideWindow&quot;).not($(&quot;h3.viewing&quot;).siblings()).animate({
+        left: -paneWidth + &quot;px&quot;
+        },&#39;fast&#39;,&#39;swing&#39;);
+
+    $(&quot;.ipodPane h3.viewing&quot;).find(&quot;img&quot;).css(&#39;margin-top&#39;, -tabImgHt / 2 + &#39;px&#39;);
+    $(&quot;.ipodPane h3.viewing&quot;).find(&quot;span&quot;).css(&#39;color&#39;, &#39;#FFF&#39;);
+
+    $(&quot;.ipodPane h3&quot;).not(&quot;.viewing&quot;).find(&quot;img&quot;).css(&#39;margin-top&#39;, &#39;0px&#39;);
+    $(&quot;.ipodPane h3&quot;).not(&quot;.viewing&quot;).find(&quot;span&quot;).css(&#39;color&#39;, &#39;#7c7c7c&#39;);
+}</code></pre>
+           ]]>
+        </content>
+    </section>
+    <section>
+        <title>The Design</title>
+        <content>
+            <![CDATA[
+            <p>No prizes for guessing what this page design is inspired from.
+            Its a lot cleaner than my desk in reality though! Some of the pics I 
+            got from a simple Google Search while others I clicked myself. The 
+            shadow effect images were created with Photoshop.</p>
+            <p>One trick that I use a lot is the Pure CSS Button Rollover. You 
+            can see this effect on the iPod main navigation buttons. This 
+            involves creating a image double the height of your intended button
+            and having both the Mouseover and Mouseout graphics in the same image.
+            Something like this:</p>
+            <img src="images/AboutMe1/ipodTabIcon_info.png" alt="CSS Hover Example image"
+            class="aboutImg"></img>
+            <p>Then we set the CSS to show only half the image and shift it 
+            cleverly on hover.</p>
+<pre><code>.ipodPane h3 {
+    margin: 0 auto; 
+    position:absolute;	
+    width: 25%;
+    height: 12%;
+    bottom: 0px;
+    overflow:hidden;
+    background:url(../images/AboutMe1/ipodTabIcon_02.png) #000 repeat-x;
+}
+.ipodPane h3:hover img{
+	margin-top: -55px;
+}</code></pre>
+            <p>A variation of this trick is to set the required image as the 
+            background-image and then shift the background-position accordingly.
+            I like this effect because it involves no jQuery and will work on the
+            most ancient browsers imaginable. For more details on this effect 
+            have a look at 
+            <a href="http://www.webvamp.co.uk/blog/coding/graphical-css-rollover-menu/">
+                WebVamp's Graphical CSS Rollover Menu</a>.</p>
+                <p>Also, this page is going to be home to a lot of Easter Eggs.
+                I am not going to say more, because otherwise they would be just
+                plain eggs. You don't want those!</p>
+                ]]>
+        </content>
+    </section>
+    <section>
+        <title>External Links</title>
+        <content>
+            <![CDATA[
+            <p id="externalLinks">
+                
+            </p>
+            ]]>
+        </content>
+    </section>
+</page>

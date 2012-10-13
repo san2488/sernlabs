@@ -1,0 +1,104 @@
+@charset "utf-8";
+/* CSS Document */
+body {
+    background:#FFF; /*#f8f8ee;	*/
+    font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;;
+    margin: 0; /* it's good practice to zero the margin and padding of the body element to account for differing browser defaults */
+    padding: 0;
+    text-align: center; /* this centers the container in IE 5* browsers. The text is then set to the left aligned default in the #container selector */
+    color: #000000;
+}
+#header {
+    font-family: Papyrus, fantasy;
+    background: url('../images/Links2/papyrus-blatt.jpg') no-repeat #e6e6cf 0px -10px;
+    font-size: 85px;
+    color:#b8524f;
+    -moz-border-radius: 8px 8px;
+    border-radius: 8px 8px;
+    text-shadow:1px 1px #000;
+}
+#header a{
+    color: inherit;
+    text-decoration: none;
+}
+#container {
+    width: 80%;
+    margin: 0 auto;
+}
+#content{
+    
+}
+.clearboth {
+    clear:both;
+}
+.pageInfo {
+    width: 100%;
+    padding-bottom: 1%;
+}
+.pageIndex{
+    background:#eeeedd;
+    height:100px;
+    float:left;
+    width:8%;
+    padding:0 1%;
+    font-size: 60px;
+    color:#b8524f;
+    line-height: 95px;
+    -moz-border-radius: 8px 8px;
+    border-radius: 8px 8px;
+}
+.pageDetails {
+    float:left;
+    background:#eeeedd; 
+    height: 100px;
+    width: 89%;
+    -moz-border-radius: 8px 8px;
+    border-radius: 8px 8px;
+    margin-left: 1%;
+    text-align: left;
+}
+.pageTitle{
+    display:block;
+    font-size: 35px;    
+    line-height: 55px;
+    padding-left: 2%;
+}
+.pageTitle a{
+    text-decoration: none;
+    color:#b8524f;
+}
+.pageLink {
+    padding-left: 2%;
+}
+.aboutLink {
+    font-size: 12px; 
+}
+#topNav ul{
+    list-style: none;
+    text-align: right;
+}
+#topNav li{
+    display:inline;
+    border-right: 1px solid;
+    padding:0 1%;
+    
+}
+#topNav ul li a{
+    text-decoration: none;
+    color:#b8524f;
+    font-size: 18px;
+}
+#topNav ul li a:hover{
+    text-decoration: underline;
+}
+#topNav ul li.lastItem{
+    border: none;
+}
+.socialIntegration {
+    float: right;
+    padding-top: 14px;
+}
+.socialIntegration span{
+    display:block;
+    padding-top: 2px;
+}

@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<!--
+
+    PUBLIC ID: -//sernlabs//draft//EN
+    SYSTEM ID: http://server/path/about_aboutsite1.dtd
+
+-->
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT page (title, keywords, description, section*)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT title (#PCDATA)>
+
+<!ELEMENT keywords(keyword*)>
+
+<!ELEMENT keyword(#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT description (#PCDATA|p)*>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT section (title, content)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT content (#PCDATA|p|pre|code|img|a)*>
+
+<!-- Expected HTML Elements -->
+<!ELEMENT p (#PCDATA|img|a)*>
+<!ELEMENT a (#PCDATA)>
+<!ELEMENT pre (#PCDATA|code)*>
+<!ELEMENT code (#PCDATA)>
+<!ELEMENT img EMPTY>
+
+<!ATTLIST a href CDATA #REQUIRED>

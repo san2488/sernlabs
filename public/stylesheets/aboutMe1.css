@@ -1,0 +1,308 @@
+@charset "utf-8";
+/* CSS Document */
+body {
+	background:url(../images/AboutMe1/woodBG.jpg);	
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	margin: 0; /* it's good practice to zero the margin and padding of the body element to account for differing browser defaults */
+	padding: 0;
+	text-align: center; /* this centers the container in IE 5* browsers. The text is then set to the left aligned default in the #container selector */
+	color: #000000;
+}
+/* IE likes to add an annoying border to links for some reason */
+a img {
+    border:none;
+}
+#mainContent {
+	position:absolute;
+	width:100%;
+	margin:0 auto; /* the auto margins (in conjunction with a width) center the page */
+	text-align:left; /* this overrides the text-align: center on the body element. */
+}
+#ipodHolder {
+	position:absolute;
+	background:url(../images/AboutMe1/ipod_center.png) no-repeat;
+	height:691px;
+	width:385px;
+	margin:0 auto;
+	left:50%;
+	margin-left:-231px;
+}
+#ipodHome a{
+	height:66px;
+	width:72px;
+	position:absolute;
+	left: 156px;
+	top: 595px;
+}
+#ipodViewport {
+	position:absolute;
+/*	height:563px;*/
+	width:385px;
+	margin:0 auto;
+	top: 102px;
+/*	left:50%;*/
+}
+.ipodStatusBar {
+	position:absolute;
+	font-size: 12px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight:bold;
+	width:100%;
+/*	text-align:center;*/
+	padding-top:14px;
+	height:16px;
+	margin:0 auto;
+	clear:both;
+}
+#ipodContent {
+	position:absolute;
+	margin:0 auto;
+	width: 332px;
+	left:26px;
+	top: 30px;
+	height: 445px;
+	overflow:hidden;
+}
+
+.ipodPane {
+	margin:0 auto;
+	width: 25%;
+	height:100%;
+	float: left;
+	padding:0px;
+}
+.ipodPane span.ipodSlideWindow {
+	margin: 0 auto;
+	width:100%;
+	left:0px;
+	height: 88%;
+	position:absolute;
+	background: url(../images/AboutMe1/tiling_stripes.gif) repeat;
+}
+.ipodPane h3 {
+	margin: 0 auto; 
+	position:absolute;	
+	width: 25%;
+	height: 12%;
+	bottom: 0px;
+	overflow:hidden;
+	background:url(../images/AboutMe1/ipodTabIcon_02.png) #000 repeat-x;
+}
+.ipodPane h3 span {
+	position:absolute;
+	color:#7c7c7c;
+	width:100%;
+	bottom: 6px;
+	font-size:10px;
+	text-align:center;
+}
+.ipodPane h3:hover span {
+	color:#FFF;
+}
+.ipodPane h3 img{
+/*	padding-top:1px;*/
+}
+.ipodPane h3:hover img{
+	margin-top: -55px;
+}
+.ipodHeader {
+	height:40px;
+	line-height:40px;
+	text-align:center;
+	color:#FFF;
+	font:bold;
+	font-size:20px;
+}
+.ipodHdrBlack {
+	background:url(../images/AboutMe1/ipod_bg_hdr_b.png) repeat-x;
+/*	border-top:#434B6D 1px solid;*/
+/*	border-bottom:#434B6D 1px solid;*/
+        position: relative;
+        width: 100%;
+        z-index: 100;
+}
+.ipodHdrBlue {
+	background:url(../images/AboutMe1/ipod_bg_hdr.png) repeat-x;
+	border-top:#434B6D 1px solid;
+	border-bottom:#434B6D 1px solid;
+}
+.ipodHdrBtn {
+	font-size:14px;
+	line-height:30px;
+	color:#FFF;
+	margin-top:6px;
+	height:30px;
+	width:15%;
+	cursor:pointer;
+}
+.ipodHeaderLftBack {
+	background:url(../images/AboutMe1/img_btnBack.png) no-repeat;
+	float:left;
+	padding-left:8px;
+	padding-right:4px;
+	border-top-right-radius:5px;
+	border-bottom-right-radius:5px;
+	float:left;
+        font-weight: bold;
+	border-right:#000 solid 1px;
+}
+.ipodHeaderRgtBack {
+	background:url(../images/AboutMe1/img_btnBack.png) no-repeat;
+	float:right;
+	color:#FFF;
+	margin-top:8px;
+	padding-left:8px;
+	padding-right:4px;
+	border-top-right-radius:5px;
+	border-bottom-right-radius:5px;
+	float:right;
+}
+.ipodHeaderTxt {
+	float:none;
+	width:70%;
+}
+table.ipodForm {
+	border-radius: 12px;
+	background-color:#FFF;
+	border:#999 solid 1px;
+	width:100%;
+	font-size: 13px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight:bold;
+	text-align:left;
+	text-transform:lowercase;
+	margin-bottom:10px;
+}
+table.ipodForm td {
+	border:#999 solid;
+	border-width:0px 0px 1px 0px;
+	padding:8px;
+}
+table.ipodForm tr:last-child td {
+	border-width:0px;
+}
+table.ipodForm td:first-child {
+	color:#516691;
+	width:20%;
+	padding:2px;
+	font-size:12px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight:bold;
+	text-align:right;
+}
+.ipodLink {
+	cursor:pointer;
+}
+table.ipodForm .ipodLink td:last-child{
+	color:#000;
+	background:url(../images/AboutMe1/arrow_right.png) no-repeat #FFF;
+	background-position:95%;
+}
+table.ipodForm .ipodLink:hover td{
+	color:#FFF;
+	background:url(../images/AboutMe1/arrow_right_white.png) no-repeat #06C;
+	background-position:95%;
+}
+table.ipodForm tr.ipodLink:last-child td:last-child {
+	border-bottom-right-radius:12px;	
+}
+table.ipodForm tr.ipodLink:first-child td:last-child {
+	border-top-right-radius:12px;	
+}
+table.ipodForm tr.ipodLink:last-child td:first-child {
+	border-bottom-left-radius:12px;	
+}
+table.ipodForm tr.ipodLink:first-child td:first-child {
+	border-top-left-radius:12px;	
+}
+table.ipodIntro {
+	width:100%;
+	font-size:16px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight:bold;
+	padding-bottom:8px;
+	text-transform:capitalize;
+}
+table.ipodIntro td:first-child{
+	text-align:right;
+	width:20%;
+	padding:2px;	
+}
+img.ipodBoxImage {
+	width:50px;
+	height:50px;
+	border-radius: 6px;
+        -mox-border-radius: 6px;
+}
+
+#sx20 img#camera{
+    top:-123px;
+    right:-63px;
+    position: fixed;
+}
+#sx20 img#switch{
+    top:215px;
+    position:fixed;
+    right:38px;
+    cursor: pointer;
+}
+
+#x10 img {
+    position:fixed;
+    bottom: -30px;
+    right: -70px;
+}
+#iEarPhones img {
+    position:fixed;
+    left: -5px;
+    top: 50%;
+}
+#spikeGuard img {
+    position: fixed;
+}
+
+#naughtyMouse img {
+    position: fixed;
+    left: 260px;
+    top: 240px;
+}
+#dummiesBook img {
+    position: fixed;
+    bottom: -300px;
+    left: 30px;
+}
+#coffeeStain img {
+    position: fixed;
+    right: 220px;
+    top: 440px;
+}
+div#galleryButton {
+    height: 20px;
+    position: absolute;
+    right: 80px;
+    top: 245px;
+    width: 20px;
+}
+.pointer {
+    cursor: pointer;
+}
+.transparent{
+    zoom: 1;
+    filter: alpha(opacity=00);
+    opacity: 0.0;
+}
+
+.divLeft {
+    width: 33%;
+    float: left;
+}
+
+.divCenter {
+    width: 34%;
+    float: left;
+}
+
+.divRight {
+    width: 33%;
+    float: left;
+}

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "aboutpage.dtd">
+<page url="HomePage1.php">
+    <title>Home Page</title>
+    <description>
+        This is the home page, mother page, landing page, etc for the site. This
+        will probably be the first page that most people visit and link to,
+        consequently the highest PageRanked page.
+    </description>
+    <keywords>
+        <keyword>CSS Rollover</keyword>
+        <keyword>Mobile CSS</keyword>
+        <keyword>iPhone</keyword>
+        <keyword>media</keyword>
+        <keyword>viewport</keyword>
+        <keyword>&lt;meta&gt;</keyword>
+    </keywords>
+    <section>
+        <title>The Code</title>
+        <content>
+            <![CDATA[
+
+            <p>This page has no Javascript and no complex PHP. The file extension 
+            is PHP more for conformance than for functionality. The twitchy 
+            wooden boards effect is an easy CSS trick. If you want to see how 
+            that's done check out the About Page for my <a href="AboutMe1.php">
+            About Me</a> page.</p>
+
+            ]]>
+        </content>
+    </section>
+    <section>
+        <title>The Design</title>
+        <content>
+            <![CDATA[
+            
+            <p>I am a sucker for Orange (the color, not the fruit). So the copious 
+            amounts of the same (the color, not the fruit) on this page. But I 
+            must admit that I have lifted most of the design idea from another
+            site. I am not going to reveal from where for avoiding comparisons
+            (and the fact that the original looks way better). But, if you do 
+            find that site, let me know.</p>
+            
+            <p>This is the first page of the website that I decided to  optimize for
+            mobile viewing. Since, this is the first page of the website, that 
+            decision was a no-brainer. Also, once you get the basics in place,
+            making the page work with mobile devices doesn't require much 
+            ingenuity. One of the basic elements that it does require is the 
+            Viewport Meta tag. This tag is read by mobile browsers to determine
+            what part of the page to display initially and the zoom-in range.</p>
+            
+<pre><code>&lt;meta name=&quot;viewport&quot; 
+    content=&quot;width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes&quot; /&gt; 
+</code></pre>            
+
+            <p>The content attribute holds most of the required parameters. The 
+            device-width value is a useful attribute to dynamically set the 
+            viewport to width of the mobile device. The scale values determine 
+            the zoom-in levels. The concept of viewport is covered nicely in
+            <a href='https://developer.apple.com/library/safari/#documentation/appleapplications/reference/safariwebcontent/usingtheviewport/usingtheviewport.html'>
+            Apple's Docmentation on Viewports</a>.</p>
+            
+            <p>Apart from the viewport, its was also necessary to tweak the 
+            style-sheet of the page to cater to smaller screens. This is done 
+            using a separate stylesheet added to the page as follows:</p>
+            
+<pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;stylesheets/homepage1.css&quot; type=&quot;text/css&quot; media=&quot;Screen&quot; /&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;stylesheets/mobile/homepage1.css&quot; type=&quot;text/css&quot; 
+    media=&quot;handheld, only screen and (max-width: 480px), 
+            only screen and (max-device-width: 480px)&quot; /&gt;
+</code></pre>
+            
+            <p>The media='Screen' attribute indicates that the stylesheet is 
+            targetted for Desktop and media='handheld' indicates mobile devices.
+            But the problem is that most modern mobile browsers won't fall for this
+            and will still end up using the Screen stylesheet. To target them, 
+            we need to determine the stylesheet depending on teh screen size. The 
+            width is specified as 480px because that is the landscape mode width 
+            non-Retina display iPhones. But most Android and retina display iPhones
+            will work with this resolution just fine. Targetting for mobile devices
+            is explained in a no-nonsense way at <a href='http://www.seabreezecomputers.com/tips/mobile-css.htm'>
+            SeaBreezeComputer.com's Mobile CSS tips</a>. But an even more useful
+            and generic guide is <a href='http://perishablepress.com/press/2009/08/02/the-5-minute-css-mobile-makeover/'>
+            Perishable Press' 5-minute CSS makeover</a>.</p>
+            ]]>
+        </content>
+    </section>
+    <section>
+        <title>External Links</title>
+        <content>
+            <![CDATA[
+            <p id="externalLinks">
+                
+            </p>
+            ]]>
+        </content>
+    </section>
+</page>

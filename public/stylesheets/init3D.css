@@ -1,0 +1,19 @@
+@charset "utf-8";
+/* CSS Document */
+body {
+    background:#FFF; /*#f8f8ee;	*/
+    font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;;
+    margin: 0; /* it's good practice to zero the margin and padding of the body element to account for differing browser defaults */
+    padding: 0;
+    text-align: center; /* this centers the container in IE 5* browsers. The text is then set to the left aligned default in the #container selector */
+    color: #000000;
+}
+#leftPane{
+    width: 50%;
+    border-right: 4px solid #FFF;
+    -moz-border-right-colors:#CCC #FFF #CCC;
+}
+#rightPane{
+/*    width: 30%;*/
+/*    background-color: #000;*/
+}

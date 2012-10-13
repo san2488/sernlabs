@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "aboutpage.dtd">
+<page>
+    <title>About Page</title>
+    <description>
+        The About Page page is a lot of things. It is primarily to explain what 
+        is going on behind-the-scenes on any page. I won't go into very fine details.
+        Rather, just expect enough here to get you started on any topic. You can 
+        follow the links I mention to get more details. This is also the first page 
+        I created in SERNLabs with PHP in it. Plus there is also a XML-XSL framework 
+        for storing content and of course there's the jQuery.
+    </description>    
+    <keywords>
+        <keyword>XML</keyword>
+        <keyword>PHP</keyword>
+        <keyword>XSLT</keyword>
+        <keyword>XSL</keyword>
+        <keyword>XSL Transform</keyword>
+        <keyword>DTD</keyword>
+        <keyword>external links</keyword>
+        <keyword>fixed background</keyword>
+        <keyword>&lt;xsl:for-each&gt;</keyword>
+        <keyword>&lt;xsl:value-of&gt;</keyword>
+    </keywords>
+    <section>
+        <title>The Code</title>
+        <content>
+            <![CDATA[
+            <p>There is supposed to be an About Page page for every page in SERNLabs,
+            even for the About Page (that's what you are reading right now 
+            (recursion! drives me crazy too ;-) )). I really didn't want to maintain 
+            a whole HTML page for every page I create. So, I decided to use PHP, 
+            XML and XSL to separate out the variable content from the static design.</p>
+            <p>So, what I ended up with was a series of XML pages that stored the 
+            HTML and raw text. Something like this:</p>
+            
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE page SYSTEM &quot;about_page.dtd&quot;&gt;
+&lt;page&gt;
+    &lt;title&gt;&lt;/title&gt;
+    &lt;description&gt;
+    &lt;/description&gt;
+    &lt;section&gt;
+        &lt;title&gt;&lt;/title&gt;
+        &lt;content&gt; 
+        &lt;/content&gt;
+    &lt;/section&gt;
+&lt;/page&gt;</page></code></pre>
+
+            <p>I guess this is pretty self-explanatory. For any help on XML always remember <a href="http://w3schools.com">W3Schools</a>.</p>
+            <p>Then, I designed some XSL mark up to help render the content of those XMLs:</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;xsl:stylesheet version=&quot;1.0&quot; xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot;&gt;
+    &lt;xsl:template match=&quot;/&quot;&gt;
+            &lt;div id=&quot;container&quot;&gt;
+                &lt;div id=&quot;mainContent&quot;&gt;
+                    &lt;div id=&quot;actualContent&quot;&gt;
+                        &lt;h1&gt;
+                            About &lt;xsl:value-of select=&quot;page/title&quot;/&gt; Page
+                        &lt;/h1&gt;
+                        &lt;p&gt;
+                            &lt;xsl:value-of disable-output-escaping=&quot;yes&quot; 
+                            select=&quot;page/description&quot;/&gt;
+                        &lt;/p&gt;
+                        &lt;xsl:for-each select=&quot;page/section&quot;&gt;
+                            &lt;h3&gt;
+                                &lt;xsl:value-of select=&quot;title&quot; /&gt;
+                            &lt;/h3&gt;
+                            &lt;xsl:value-of disable-output-escaping=&quot;yes&quot; select=&quot;content&quot; /&gt;
+                        &lt;/xsl:for-each&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/xsl:template&gt;
+&lt;/xsl:stylesheet&gt; 
+</code></pre>
+         <p>XSL is pretty comprehensively explained at 
+         <a href="http://www.w3schools.com/xsl/default.asp">W3Schools XSLT Tutorial</a>.</p>
+         <p>The next challenge was to combine the XSL and XML to dynamically 
+         render pages. This can be done through 
+         <a href="http://www.w3schools.com/xsl/xsl_client.asp">XSLT on Client using Javascript</a> or 
+         through <a href="http://www.w3schools.com/xsl/xsl_server.asp">XSLT on Server</a>.
+         I was averse to dealing with Browser-specific rendering issues later, 
+         and so decided to opt for the latter using PHP. W3Schools falls a litte
+         short here since their examples for XSL Transformation use ASP. But I 
+         found the required info at 
+         <a href="http://www.sitepoint.com/transform-php-xslt/">Sitepoint.com's Transform your PHP with XSLT</a>.</p>
+         <p>The final code was pretty simple:</p>
+<pre><code>$doc = new DOMDocument();
+$xsl = new XSLTProcessor();
+
+$doc-&gt;load(&quot;../includes/aboutpage/aboutpage.xsl&quot;);
+$xsl-&gt;importStyleSheet($doc);
+
+$page = $_GET[&quot;pg&quot;];
+$page = explode(&quot;.&quot;, $page);
+$page = $page[0];
+$page = &quot;includes/data/&quot; . $page . &quot;.xml&quot;;
+$doc-&gt;load($page);
+echo $xsl-&gt;transformToXML($doc);</code></pre>
+            <p>One major catch was that the PHP XSLT Parser parsed the HTML that 
+            I wanted to display as is. I got around this by storing the HTML in 
+            the XSL withing CDATA blocks. CDATA blocks are not parsed by the 
+            parser. This was the best solution I found to maintain the readability 
+            the XMLs:</p>
+<pre><code>&lt;![CDATA[
+    &lt;p&gt;There is supposed to be an About Page page for every page in SERNLabs,
+    even for the About Page (that&#39;s what you are reading right now 
+    (recursion! drives me crazy too ;-) )). I really didn&#39;t want to maintain 
+    a whole HTML page for every page I create. So, I decided to use PHP, 
+    XML and XSL to separate out the variable content from the static design.&lt;/p&gt;
+    &lt;p&gt;So, what I ended up with was a series of XML pages that stored the 
+    HTML and raw text. Something like this:&lt;/p&gt;
+]]&gt;</code></pre>
+            ]]>
+        </content>
+    </section>
+    <section>
+        <title>The Design</title>
+        <content>
+            <![CDATA[
+            <p>This page just had to be simple. There could be not distractions 
+            from the (hopefully) useful content. Simple and Sombre were the keywords.</p>
+            <p>The fixed background is achieved through:</p>
+<pre><code>body {
+    background:url(../images/AboutPage_BG.jpg) fixed no-repeat #000;
+}</code></pre>
+            <p>The most interesting feature with respect to the design was the 
+            External Links section. I decided to create its content entirely dynamically 
+            on the Client. But first I had to identify the external links that 
+            I was adding to the page. This was made easy by a 
+            <a href="http://jquery-howto.blogspot.com/2009/06/find-select-all-external-links-with.html">jQuery Blog on Blogspot</a>.</p>
+<pre><code>$.expr[&#39;:&#39;].external = function(obj){
+    return !obj.href.match(/^mailto\:/) &amp;&amp; (obj.hostname != location.hostname);</code></pre>
+    <p>All that was left, was to append the links found to the External Links section:</p>
+<pre><code>$(document).ready(function() {
+    var extlinks = $(&quot;a:external&quot;);
+    $.each(extlinks, function(i, link){
+        $(&quot;#externalLinks&quot;).append($(link).clone().attr(&quot;target&quot;,&quot;_blank&quot;)).append(&quot;&lt;br /&gt;&quot;);
+    });
+});</code></pre>
+            ]]>
+        </content>
+    </section>
+    <section>
+        <title>External Links</title>
+        <content>
+            <![CDATA[
+            <p id="externalLinks">
+                
+            </p>
+            ]]>
+        </content>
+    </section>
+</page>

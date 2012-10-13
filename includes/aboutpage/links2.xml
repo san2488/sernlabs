@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "aboutpage.dtd">
+<page url="Links2.php">
+    <title>Links</title>
+    <description>
+        This page is a one-stop shop for all the web pages at SERNLabs.
+    </description>
+    <keywords>
+        <keyword>XML</keyword>
+        <keyword>SimpleXML</keyword>
+        <keyword>PHP XML</keyword>
+        <keyword>Like</keyword>
+        <keyword>+1</keyword>
+        <keyword>Tweet</keyword>
+        <keyword>Facebook</keyword>
+        <keyword>Google+</keyword>
+        <keyword>Twitter</keyword>
+        <keyword>integration</keyword>
+    </keywords>
+    <section>
+        <title>The Code</title>
+        <content>
+            <![CDATA[
+
+            <p>This is a XML driven dynamic page. I use a simple XML document
+            to store the list of pages on SERNLabs. This document goes like this:
+            </p>
+<pre><code>&lt;pages&gt;
+    &lt;page&gt;
+        &lt;AboutXml&gt;
+            homepage1.xml
+        &lt;/AboutXml&gt;
+    &lt;/page&gt;
+    &lt;page&gt;
+        &lt;AboutXml&gt;
+            aboutme1.xml
+        &lt;/AboutXml&gt;
+    &lt;/page&gt;
+&lt;/pages&gt;
+</code></pre>
+            <p>To read the XMLs, I use 
+            <a href='http://php.net/manual/en/book.simplexml.php'> PHP Simple XML</a>.</p>
+<pre><code>$pages = array();
+$pageList = simplexml_load_file(&#39;pageList.xml&#39;);
+
+$pageNames = $pageList-&gt;page;
+
+foreach($pageNames as $pageName){
+    $pageUrl = &quot;../includes/aboutpage/&quot; . trim($pageName-&gt;AboutXml);
+    $pages[] = new Page($pageUrl);
+}
+</code></pre>            
+            <p>I have explained Simple XML in a little more detail on the About Page
+            of <a href='PhotoGallery1.php'>SERNLabs' Photo Gallery</a>. But I 
+            have used more features of PHP XML on the About Page itself. To 
+            see that go to the 
+            <a href='AboutPage.php' id='aboutPage'>About Page</a> of any 
+            About Page - if you understood what I just said.</p>
+            <p>I could easily have stored the page information in a MySQL database.
+            In fact, I could end up doing that going forward. But XML was a good way 
+            to get this page off the ground quickly.
+            ]]>
+        </content>
+    </section>
+    <section>
+        <title>The Design</title>
+        <content>
+            <![CDATA[
+            
+            <p>I started off with a radically different design for this page.
+            That looked something like:</p>
+            <img src='images/Links1.jpg' alt='Links 1 Image' class="aboutImg"/>
+            <p>But half way through I decided that the layout was too distracting
+            and drew attention away from the content. So I decided to use a more
+            mellowed look. One that gave more prominence to the links - which 
+            after all, are what this page is about.</p>
+            <p>I have also included Social Media button links on this page for
+            Facebook, Google+ and Twitter. Right now, I have hardly customized them,
+            though I would like to that at some point. But 
+            all three provide good Tutorials and Code Generators to generate 
+            their respective links. You could read more about
+            <a href="http://developers.facebook.com/docs/reference/plugins/like/">
+            Adding Like button for Facebook</a>,
+            <a href="http://www.google.com/webmasters/+1/button/">Adding +1 button 
+            for Google+</a> and 
+            <a href="https://twitter.com/about/resources/buttons">Adding the 
+            Tweet button</a> at the Developer sections of each site.
+            ]]>
+        </content>
+    </section>
+    <section>
+        <title>External Links</title>
+        <content>
+            <![CDATA[
+            <p id="externalLinks">
+                
+            </p>
+            ]]>
+        </content>
+    </section>
+</page>

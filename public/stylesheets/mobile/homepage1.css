@@ -1,0 +1,164 @@
+@charset "utf-8";
+/* CSS Document */
+html, body {
+    font: 100% Verdana, Arial, Helvetica, sans-serif;
+    margin: 0; /* it's good practice to zero the margin and padding of the body element to account for differing browser defaults */
+    padding: 0;
+    text-align: center; /* this centers the container in IE 5* browsers. The text is then set to the left aligned default in the #container selector */
+    color: #000000;
+    width:100%;
+/*    background:url(../../images/bg-global.jpg) repeat-x #911d00;*/
+    background:url(../../images/bg-redspotlite.jpg) -280px -0px no-repeat #911d00;
+}
+a:link {
+	text-decoration:none;
+	font-family:inherit;
+	color:#bd2500;
+}
+a:hover {
+	text-decoration:underline;
+}
+a:visited {
+	color:#881b01;
+}
+#container {
+	margin:0 auto; /* the auto margins (in conjunction with a width) center the page */
+	text-align:center; /* this overrides the text-align: center on the body element. */
+}
+#topNav {
+    position:static;
+    font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
+    width:100%;
+    background:url(../../images/bgCarbonFooter.jpg) repeat;
+    height:auto;
+    text-align: center;
+    height: 42px;
+}
+#topNav ul{
+    list-style: none;
+    position:static;
+    line-height: 42px;
+    margin: 0 auto;
+    left:0px;
+    padding: 0px;
+}
+#topNav li {
+    display:inline; 
+}
+a.topNavLink {	
+    font-size:20px;
+    color:#ffb85f;
+    text-decoration:none;
+    font-family:inherit;
+}
+a.topNavLink:hover{
+    background:url(../../images/topNav_02.png) repeat-x;
+    text-decoration:none;
+}
+
+#mastHead {
+    position:static;
+    left: auto;
+    top:auto;
+    height: auto;
+}
+#mastHead img{
+/*    position:absolute;*/
+/*    clip:rect(0px,400px,auto,80px);*/
+/*    left: -80px;*/
+    position: relative;
+    max-width: 100%;
+    height: auto;
+    width: auto;
+}
+#navPole {
+    position:static;
+    height:auto;
+    width:100%;
+    overflow:visible;
+}
+#navPoleImage {
+    bottom:0px;
+    position:relative;
+    left:0%;
+    overflow:hidden;
+    display:none;
+}
+#navPoleImage img {
+    height: 482px;
+    width: 41px;
+}
+.plankStack {
+    position:relative;
+    top:0;    
+}
+.plankImage {    
+    position: static;
+    width: 100%;
+    height: 75px;
+    display: block;   
+    background: top center no-repeat;
+}
+.plankImage:Hover {
+	background-position:center -75px;
+}
+#siteIntro {
+    position:static;
+    width:100%;
+    background:none;
+    text-align: left;
+}
+.introColumn {
+    width: 100%;
+    float: none;
+    padding:0;
+    padding-top: 4px;
+    background:url(../../images/bg-mellowyellow.jpg) no-repeat 0 0;
+}
+.aboutTitle {
+    font: "Lucida Console", "Lucida Sans Typewriter", Monaco, "Bitstream Vera Sans Mono", monospace;
+    color:#b32300;
+    font-size:18px;
+    font-weight:bold;
+}
+
+.aboutDesc {
+    font: "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
+    font-size:16px;
+    text-align:left;
+    color:#54433e;
+    padding-top:4px;
+    padding: 2px;
+}
+.clearboth {
+    clear:both; 
+}
+.aboutImg {
+    float: left;
+    padding-right: 3px;
+}
+#footer {
+    position:static;
+    background:url(../../images/bgCarbonFooter.jpg) repeat;
+    height:auto;
+    color:#ebd87c;
+    width:auto;
+}
+#footerContent {
+    position:static;
+    height:auto;
+    margin-top:auto;
+    font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
+    margin-left:auto;
+    margin-right:auto;
+    width:auto;
+}
+#copyright {
+    position:static;
+    color:#aeaa92;
+    font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
+}
+.contactInfo{
+    display:inline;
+    width: 100%;
+}

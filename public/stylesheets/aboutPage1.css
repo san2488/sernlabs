@@ -1,0 +1,99 @@
+@charset "utf-8";
+/* CSS Document */
+body {
+	font: 100% Verdana, Arial, Helvetica, sans-serif;
+	margin: 0; /* it's good practice to zero the margin and padding of the body element to account for differing browser defaults */
+	padding: 0;
+	text-align: center; /* this centers the container in IE 5* browsers. The text is then set to the left aligned default in the #container selector */
+	color: #000000;
+	background:url(../images/AboutPage_BG.jpg) fixed no-repeat #000;
+}
+h1, h3 {
+	font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+	line-height:0px;
+	margin:0px;
+	padding:0px;
+	margin-top:4px;
+	padding-top:4px;
+}
+#container {
+	margin:0 auto; /* the auto margins (in conjunction with a width) center the page */
+	text-align:left; /* this overrides the text-align: center on the body element. */
+}
+#pgHeader {
+	border:none;
+	height:69px;
+	position:fixed;
+	top:0px;
+	margin:0 auto;
+	margin-left:210px;
+}
+#mainContent {
+	background-color:#FFF;
+	width:823px;
+	position:absolute;
+	top:69px;
+	margin:0 auto;
+	margin-left:231px;
+	overflow:visible;
+        min-height: 820px;
+}
+#topNav {
+	position:absolute;
+	color:#FFF;
+	top:0px;
+	right:20px;
+}
+#topNav ul {
+    list-style: none outside none;
+    padding: 0;
+	margin:0px;
+}
+#topNav ul li {
+    float: left;
+    padding: 0;
+}
+#topNav ul li a {
+    color: #FFF;
+	padding:0px;
+	margin-top:15px;
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
+	display:block;
+	width:80px;
+	height:40px;
+	padding:2px 4px;
+}
+#topNav ul li a:hover {
+	background-color:#FFF;
+	color:#000;
+}
+
+#actualContent {
+	padding:20px;
+	margin-top:40px;
+	font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+}
+pre {
+	border:1px #000 solid;
+	padding:5px;
+	background-color:#CCC;
+}
+img.aboutImg {
+    border: 1px solid #BBB;
+    padding: 2px;
+    margin: 0 auto;
+    display: block;
+}
+.keywords {
+    font-size: 12px;
+}
+.keywords span {
+    padding: 0px 2px;
+    background:#CCC;
+    color:#FFF;
+    margin:0 2px;
+    -moz-border-radius:2px;
+    border-radius: 2px;
+}
